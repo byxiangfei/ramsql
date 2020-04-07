@@ -122,8 +122,10 @@ func Run(db *sql.DB) {
 
 		stmt := string(buffer)
 		stmt = strings.Replace(stmt, "\n", "", -1)
+        fmt.Println("before ",stmt)
 		stmt = strings.Replace(stmt, "`", "", -1)
 
+        fmt.Println("after ",stmt)
 		// Do things here
 		if strings.HasPrefix(stmt, "SELECT") {
 			query(db, stmt)
